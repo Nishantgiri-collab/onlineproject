@@ -1,0 +1,98 @@
+   .container {
+      display: flex;
+      gap: 130px; /* space between two blocks */
+    }
+
+    .card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      width: 350px;   /* increased width */
+      min-height: 420px; /* increased height */
+    }
+
+    .card h2 {
+      font-size: 20px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .card h1 {
+      font-size: 30px;
+      color: #4a90e2;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .features {
+      margin: 20px 0;
+    }
+
+    .features p {
+      font-size: 15px;
+      color: #444;
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    .features p::before {
+      content: "✔ ";
+      color: #7ed957;
+      font-weight: bold;
+    }
+
+    .register-btn,
+    .submit-btn {
+      background: #4a90e2;
+      border: none;
+      color: #fff;
+      padding: 14px;
+      font-size: 18px;
+      border-radius: 28px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    .register-btn:hover,
+    .submit-btn:hover {
+      background: #357ABD;
+    }
+
+    /* Form Section */
+    .subclass h2 {
+      font-size: 22px;
+      text-align: center;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 6px;
+      font-weight: bold;
+      font-size: 15px;
+      color: #333;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+    }

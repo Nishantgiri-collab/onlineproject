@@ -1,0 +1,47 @@
+.review-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.trustpilot-card, .reviews-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 220px;
+  text-align: center;
+}
+
+.trustpilot-card h3 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.reviews-card h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.stars {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.green-star {
+  color: #00b67a; /* Trustpilot green */
+}
+
+.stars.orange span {
+  color: #f39c12; /* orange stars */
+}
+
+.review-icon {
+  color: #00b67a;
+  font-size: 22px;
+  vertical-align: middle;
+}
