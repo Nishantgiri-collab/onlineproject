@@ -74,7 +74,6 @@ def login_user(request):
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
-
 from .models import ClassSlot
 @login_required
 def book_class(request):

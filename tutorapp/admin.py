@@ -1,3 +1,4 @@
+
 from django.contrib import admin
 from .models import RegistrationUser,ClassSlot
 # Register your models here.
@@ -17,4 +18,3 @@ class ClassSlotAdmin(admin.ModelAdmin):
     def get_email(self, obj):
         return obj.user.email
     get_email.short_description = "Email"
-

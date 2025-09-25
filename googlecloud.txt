@@ -1,0 +1,33 @@
+
+-------------------------------------
+sudo nano /etc/systemd/system/gunicorn.service
+
+sudo systemctl restart gunicorn
+
+sudo systemctl daemon-reexec
+sudo systemctl restart gunicorn
+sudo systemctl status gunicorn
+
+[Unit]
+Description=gunicorn daemon for Django app
+After=network.target
+
+[Service]
+User=giri14nishant
+Group=www-data
+WorkingDirectory=/home/giri14nishant/onlinetutor
+Environment="PATH=/home/giri14nishant/venv/bin"
+ExecStart=/home/giri14nishant/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/home/giri14nishant/onlinetutor/gunicorn.sock \
+          onlinetutorportal.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl restart nginx
+
+sudo nano /etc/nginx/sites-available/onlinetutor
+(staticfiles.W004) The directory '/home/giri14nishant/onlineproject/onlinetutorportal/tutorapp/static' in the STATICFILES_DIRS setting does not exist.
+
