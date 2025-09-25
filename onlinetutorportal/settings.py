@@ -122,7 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # Where Django will look for your static files in development
 STATICFILES_DIRS = [
-    BASE_DIR / "static",   # put a "static" folder at project root
+    BASE_DIR / "tutorapp" / "static",  # put a "static" folder at project root
 ]
 # Where collectstatic will gather all files for production
 STATIC_ROOT = BASE_DIR / "staticfiles"
