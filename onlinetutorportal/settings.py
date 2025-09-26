@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,13 +122,27 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Where Django will look for your static files in development
-STATICFILES_DIRS = [
-    BASE_DIR / "tutorapp" / "static",  # put a "static" folder at project root
-]
+
 # Where collectstatic will gather all files for production
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#
+
+from decouple import config
+
+TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
+TWILIO_WHATSAPP_NUMBER = config("TWILIO_WHATSAPP_NUMBER")
+MY_WHATSAPP_NUMBER = config("MY_WHATSAPP_NUMBER")
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")   # your Gmail
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")  # app password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

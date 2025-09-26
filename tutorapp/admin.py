@@ -13,7 +13,12 @@ class RegistrationUserAdmin(admin.ModelAdmin):
 # ClassSlot Admin
 @admin.register(ClassSlot)
 class ClassSlotAdmin(admin.ModelAdmin):
-    list_display = ('id','user', 'get_email', 'slot', 'booked_on')
+    list_display = ('id', 'get_fullname', 'get_email', 'phone_number', 'slot', 'booked_on')
+
+
+    def get_fullname(self, obj):
+        return obj.user.fullname
+    get_fullname.short_description = "Full Name"
 
     def get_email(self, obj):
         return obj.user.email
