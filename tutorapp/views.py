@@ -10,6 +10,11 @@ from django.conf import settings
 from django.core.mail import send_mail
 
 
+def about(request):
+    return render(request, "about.html")
+
+def privacy(request):
+    return render(request, "privacy.html")
 
 def reg_login_required(view_func):
     @wraps(view_func)

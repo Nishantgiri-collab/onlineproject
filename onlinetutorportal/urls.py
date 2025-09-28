@@ -15,6 +15,8 @@ urlpatterns = [
     path('login/', views.login_user, name='login'),
     path("book/", views.book_class, name="book_class"),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps_dict}, name="sitemap"),
+    path("about/", views.about, name="about"),
+    path("privacy/", views.privacy, name="privacy"),
 ]
 
 

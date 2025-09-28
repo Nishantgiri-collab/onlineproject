@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container my-5">
+
+  <header class="d-flex justify-content-between align-items-center mb-4">
+    <a class="d-flex align-items-center text-decoration-none text-dark" href="/">
+      <img src="{% static 'image/logo.png' %}" alt="Online Tutor 4 U logo" class="rounded me-2" style="width:48px;height:48px;object-fit:cover;">
+      <div>
+        <strong>OnlineTutor4u</strong><br>
+        <small class="text-muted">Personalized online & local tutoring</small>
+      </div>
+    </a>
+    <a class="btn btn-primary" href="/login/">Login</a>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="p-4 bg-light rounded mb-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <h1>About OnlineTutor4u.info</h1>
+          <p class="lead">We help students connect with experienced and verified tutors across subjects and levels — online or locally. Our mission is to make quality education accessible and affordable.</p>
+
+          <div class="card p-3 mb-3">
+            <h3 class="h5">Our Mission</h3>
+            <p class="text-muted">To empower learners with personalized guidance, trusted tutors, and a flexible learning experience.</p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="card p-3">
+                <h4 class="h6">Verified Tutors</h4>
+                <p class="text-muted">All tutors are identity-checked and reviewed for quality.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card p-3">
+                <h4 class="h6">Flexible Scheduling</h4>
+                <p class="text-muted">Book lessons as per your convenience — cancel or reschedule easily.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card p-3">
+                <h4 class="h6">Secure Payments</h4>
+                <p class="text-muted">Safe payment gateway with refund policies for dissatisfied students.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aside -->
+        <aside class="col-lg-4">
+          <div class="card p-3">
+            <h3 class="h5">Get started</h3>
+            <p class="text-muted">Find tutors by subject or register as a student to reach teachers.</p>
+            <a class="btn btn-primary mb-3" href="/registration/">Register</a>
+
+            <hr>
+            <h4 class="h6">Contact</h4>
+            <p class="text-muted">
+              Have questions? Contact our support.<br>
+              📞 Call us: <span class="fw-bold text-primary">+91 91791 67128</span>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="mb-5">
+      <h2>Core Values</h2>
+      <ul class="list-unstyled mt-3">
+        <li><strong>1. Student-first</strong> <span class="text-muted d-block">We prioritize student outcomes and satisfaction.</span></li>
+        <li><strong>2. Quality</strong> <span class="text-muted d-block">We provide verified and experienced tutors.</span></li>
+        <li><strong>3. Transparency</strong> <span class="text-muted d-block">Clear pricing, reviews and refund policies.</span></li>
+      </ul>
+    </section>
+
+    <!-- Tutors -->
+    <section class="mb-5">
+      <h2>Meet some of our tutors</h2>
+      <div class="row g-3 mt-2">
+        <div class="col-md-4">
+          <div class="card p-3 d-flex align-items-center">
+            <img src="{% static 'image/tutor1.jpg' %}" alt="Tutor 1" class="rounded mb-2" style="width:64px;height:64px;object-fit:cover;">
+            <div>
+              <strong>Mrs. Saloni</strong><br>
+              <span class="text-muted">Physics & Maths, 5+ years</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 d-flex align-items-center">
+            <img src="{% static 'image/tutor2.jpg' %}" alt="Tutor 2" class="rounded mb-2" style="width:64px;height:64px;object-fit:cover;">
+            <div>
+              <strong>Mr. Nishant</strong><br>
+              <span class="text-muted">Maths & Chemistry, 4+ years</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 d-flex align-items-center">
+            <img src="{% static 'image/tutor3.jpg' %}" alt="Tutor 3" class="rounded mb-2" style="width:64px;height:64px;object-fit:cover;">
+            <div>
+              <strong>Miss. Bhawna</strong><br>
+              <span class="text-muted">Computer Science & Coding, 4+ years</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4 mb-3 text-muted small">
+      <p>
+        © <span id="year"></span> Online Tutor 4 U —
+        <a href="{% url 'privacy' %}">Privacy</a> ·
+        <a href="{% url 'privacy' %}">Terms</a>
+      </p>
+    </footer>
+  </main>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+{% endblock %}

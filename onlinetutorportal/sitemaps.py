@@ -2,11 +2,8 @@ from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 
 class StaticViewSitemap(Sitemap):
-    priority = 0.8
-    changefreq = "weekly"
-
     def items(self):
-        return ["home", "about", "contact"]  # replace with your url names
+        return ['home', 'contact']  # remove 'about' if not created
 
     def location(self, item):
         return reverse(item)

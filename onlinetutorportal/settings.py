@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tutorapp',
     'widget_tweaks',
+    "django.contrib.sitemaps",
 
 ]
 
